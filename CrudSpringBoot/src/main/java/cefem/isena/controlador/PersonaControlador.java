@@ -1,4 +1,4 @@
-package cefem.isena.controler;
+package cefem.isena.controlador;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import cefem.isena.controler.interfaceService.IpersonaService;
-import cefem.isena.modelo.Persona;
+import cefem.isena.dominio.Persona;
+import cefem.isena.servicio.PersonaServicio;
 
 @Controller
 @RequestMapping
-public class Controlador {
+public class PersonaControlador {
 	
 	@Autowired
-	private IpersonaService service;
+	private PersonaServicio service;
 	
 	@GetMapping("/listar")
 	public String listar(Model model) {

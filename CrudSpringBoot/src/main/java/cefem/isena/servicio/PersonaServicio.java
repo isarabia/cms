@@ -1,11 +1,11 @@
-package cefem.isena.controler.interfaceService;
+package cefem.isena.servicio;
 
 import java.util.List;
 import java.util.Optional;
 
-import cefem.isena.modelo.Persona;
+import cefem.isena.dominio.Persona;
 
-public interface IpersonaService {
+public interface PersonaServicio {
 
 	public List<Persona>listar();
 	public Optional<Persona>listarId(int id);

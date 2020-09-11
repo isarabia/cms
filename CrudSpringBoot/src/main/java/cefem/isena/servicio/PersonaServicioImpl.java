@@ -1,4 +1,4 @@
-package cefem.isena.controler.service;
+package cefem.isena.servicio;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,15 +6,14 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import cefem.isena.controler.interfaceService.IpersonaService;
-import cefem.isena.interfaces.IPersona;
-import cefem.isena.modelo.Persona;
+import cefem.isena.dominio.Persona;
+import cefem.isena.repositorio.PersonaRepositorio;
 
 @Service
-public class PersonaService implements IpersonaService{
+public class PersonaServicioImpl implements PersonaServicio{
 
 	@Autowired
-	private IPersona data;
+	private PersonaRepositorio data;
 	
 	@Override
 	public List<Persona> listar() {

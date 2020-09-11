@@ -1,4 +1,4 @@
-package cefem.isena.modelo;
+package cefem.isena.dominio;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
