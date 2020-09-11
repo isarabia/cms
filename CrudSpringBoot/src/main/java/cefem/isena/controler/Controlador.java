@@ -2,10 +2,13 @@ package cefem.isena.controler;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cefem.isena.controler.interfaceService.IpersonaService;
@@ -19,10 +22,22 @@ public class Controlador {
 	private IpersonaService service;
 	
 	@GetMapping("/listar")
-	public String listatr(Model model) {
+	public String listar(Model model) {
 		List<Persona>personas=service.listar();
 		model.addAttribute("personas", personas);
 		return "index";
+	}
+	
+	@GetMapping("/new")
+	public String agregar(Model model) {
+		model.addAttribute("persona", new Persona());
+		return "form";
+	}
+	
+	@PostMapping("/save")
+	public String save(@Valid Persona p, Model model) {
+		service.save(p);
+		return "redirect:/listar";
 	}
 
 }
