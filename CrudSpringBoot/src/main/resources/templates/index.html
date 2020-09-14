@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 
 <div class="container mt-4">
+<a th:href="@{/}" class="btn btn-primary">Home</a>
 	<a th:href="@{/new}" class="btn btn-primary">Nuevo</a>
+	<a th:href="@{/listar}" class="btn btn-primary">Listar</a>
+	<a th:href="@{/subir}" class="btn btn-primary">Subir archivos</a>
 	<br><br>
 	<table class=table>
 		<thead>
